@@ -2,21 +2,22 @@
 
 namespace Acme\Test;
 
-use Acme\Test\Testers\ContractTester;
 use Illuminate\Container\Container;
 
 use Acme\Test\Testers\BasicTester;
+use Acme\Test\Testers\ContractTester;
 use Acme\Test\Testers\NestedDepsTester;
 use Acme\Test\Testers\MultipleDepsTester;
+
 
 class Tester implements TesterContract
 {
     /** @var array TesterContract */
     protected $testers = [
         BasicTester::class,
-        MultipleDepsTester::class,
-        NestedDepsTester::class,
         ContractTester::class,
+        NestedDepsTester::class,
+        MultipleDepsTester::class,
     ];
 
     public function test(Container $container)

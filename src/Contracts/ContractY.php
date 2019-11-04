@@ -2,6 +2,6 @@
 
 namespace Acme\Contracts;
 
-interface ContactX {
+interface ContractY {
 
 }
