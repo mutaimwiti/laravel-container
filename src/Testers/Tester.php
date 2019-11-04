@@ -8,7 +8,8 @@ class Tester implements TesterContract
 {
     /** @var array TesterContract */
     protected $testers = [
-        BasicTester::class
+        BasicTester::class,
+        MultipleDepsTester::class,
     ];
 
     public function test(Container $container)
