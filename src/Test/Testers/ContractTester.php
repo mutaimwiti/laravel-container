@@ -4,8 +4,10 @@ namespace Acme\Test\Testers;
 
 use Exception;
 use Acme\Contracts\ClassY;
+use Acme\Contracts\ClassZ;
 use Acme\Contracts\ContractY;
 use Acme\Contracts\ContractX;
+use Acme\Contracts\ContractZ;
 use Acme\Test\TesterContract;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -16,6 +18,7 @@ class ContractTester implements TesterContract
     {
         $this->unboundTest($container);
         $this->boundTest($container);
+        $this->instanceBoundTest($container);
     }
 
     protected function unboundTest($container)
@@ -43,5 +46,19 @@ class ContractTester implements TesterContract
 
         assert($classY instanceof ClassY, $errorMessage);
         assert($classY instanceof ContractY, $errorMessage);
+    }
+
+    protected function instanceBoundTest(Container $container)
+    {
+        $errorMessage = "Interface-class resolution failure";
+
+        $classZ = new ClassZ();
+
+        $container->instance(ContractZ::class, $classZ);
+
+        $resolved = $container->make(ContractZ::class);
+
+        assert($classZ == $resolved);
+        assert($classZ instanceof ClassZ, $errorMessage);
     }
 }

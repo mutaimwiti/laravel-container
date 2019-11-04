@@ -28,8 +28,6 @@ class Tester implements TesterContract
             /** @var TesterContract $tester */
             $tester = new $tester();
             $tester->test($container);
-
-            print_r("\nSuccess :)");
         }
     }
 }
