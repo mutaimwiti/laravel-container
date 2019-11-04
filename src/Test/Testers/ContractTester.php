@@ -2,9 +2,9 @@
 
 namespace Acme\Test\Testers;
 
+use Exception;
 use Acme\Contracts\ClassY;
 use Acme\Contracts\ContractY;
-use Exception;
 use Acme\Contracts\ContractX;
 use Acme\Test\TesterContract;
 use Illuminate\Container\Container;
@@ -15,6 +15,7 @@ class ContractTester implements TesterContract
     public function test(Container $container)
     {
         $this->unboundTest($container);
+        $this->boundTest($container);
     }
 
     protected function unboundTest($container)
