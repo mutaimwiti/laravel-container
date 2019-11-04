@@ -58,7 +58,7 @@ class ContractTester implements TesterContract
 
         $resolved = $container->make(ContractZ::class);
 
-        assert($classZ == $resolved);
+        assert(spl_object_hash($classZ) == spl_object_hash($resolved));
         assert($classZ instanceof ClassZ, $errorMessage);
     }
 }

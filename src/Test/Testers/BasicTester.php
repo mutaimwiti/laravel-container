@@ -33,15 +33,7 @@ class BasicTester implements TesterContract
 
         $resolved = $container->make(ClassA::class);
 
-        assert($resolved == $classA, $this->errorMessage);
+        assert(spl_object_hash($resolved) == spl_object_hash($classA), $this->errorMessage);
         assert($resolved instanceof ClassA, $this->errorMessage);
-
-        $classB = new ClassB();
-        $container->instance(ClassB::class, $classB);
-
-        $resolved = $container->make(ClassB::class);
-
-        assert($resolved == $classB, $this->errorMessage);
-        assert($resolved instanceof ClassB, $this->errorMessage);
     }
 }
