@@ -1,8 +1,11 @@
 <?php
 
-namespace Acme\Testers;
+namespace Acme\Test;
 
 use Illuminate\Container\Container;
+
+use Acme\Test\Testers\BasicTester;
+use Acme\Test\Testers\MultipleDepsTester;
 
 class Tester implements TesterContract
 {
@@ -17,7 +20,7 @@ class Tester implements TesterContract
         foreach ($this->testers as $tester) {
             print_r("\nRunning $tester");
 
-            /** @var Tester $tester */
+            /** @var TesterContract $tester */
             $tester = new $tester();
             $tester->test($container);
 

@@ -1,9 +1,10 @@
 <?php
 
-namespace Acme\Testers;
+namespace Acme\Test\Testers;
 
 use Acme\Basic\ClassA;
 use Acme\Basic\ClassB;
+use Acme\Test\TesterContract;
 use Illuminate\Container\Container;
 
 class BasicTester implements TesterContract

@@ -1,9 +1,10 @@
 <?php
 
-namespace Acme\Testers;
+namespace Acme\Test\Testers;
 
 use Acme\MultipleDeps\ClassA;
 use Acme\MultipleDeps\ClassB;
+use Acme\Test\TesterContract;
 use Illuminate\Container\Container;
 
 class MultipleDepsTester implements TesterContract

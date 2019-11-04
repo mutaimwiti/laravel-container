@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Testers;
+namespace Acme\Test;
 
 use Illuminate\Container\Container;
 
