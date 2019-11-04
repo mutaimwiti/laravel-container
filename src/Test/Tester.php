@@ -2,6 +2,7 @@
 
 namespace Acme\Test;
 
+use Acme\Test\Testers\ArbitraryTester;
 use Illuminate\Container\Container;
 
 use Acme\Test\Testers\BasicTester;
@@ -16,6 +17,7 @@ class Tester implements TesterContract
     protected $testers = [
         BasicTester::class,
         ContractTester::class,
+        ArbitraryTester::class,
         NestedDepsTester::class,
         MultipleDepsTester::class,
     ];
