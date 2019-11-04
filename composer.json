@@ -1,0 +1,11 @@
+{
+  "name": "mutaimwiti/laravel-container",
+  "description": "Messing around with Laravel IOC Container",
+  "require": {
+    "illuminate/container": "^6.4"
+  },
+  "autoload": {
+    "Acme\\": "src/"
+  },
+  "license": "MIT"
+}
