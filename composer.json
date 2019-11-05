@@ -7,7 +7,8 @@
   "autoload": {
     "psr-4": {
       "Acme\\": "src/"
-    }
+    },
+    "files": ["src/Parameters/functions.php"]
   },
   "license": "MIT"
 }
