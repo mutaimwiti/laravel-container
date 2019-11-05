@@ -61,4 +61,16 @@ class ContractTester implements TesterContract
         assert(spl_object_hash($classZ) == spl_object_hash($resolved));
         assert($classZ instanceof ClassZ, $errorMessage);
     }
+
+    protected function nestedBindingsTest(Container $container)
+    {
+        $errorMessage = "Nested bindings resolution failure";
+
+        $container->bind(ContractY::class, ClassY::class);
+        $container->bind(ContractZ::class, ContractY::class);
+
+        $resolved = $container->make(ContractZ::class);
+
+        assert($resolved instanceof ClassY, $errorMessage);
+    }
 }
