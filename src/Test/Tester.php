@@ -2,11 +2,12 @@
 
 namespace Acme\Test;
 
-use Acme\Test\Testers\ArbitraryTester;
 use Illuminate\Container\Container;
 
 use Acme\Test\Testers\BasicTester;
 use Acme\Test\Testers\ContractTester;
+use Acme\Test\Testers\ArbitraryTester;
+use Acme\Test\Testers\ParameterTester;
 use Acme\Test\Testers\NestedDepsTester;
 use Acme\Test\Testers\MultipleDepsTester;
 
@@ -18,6 +19,7 @@ class Tester implements TesterContract
         BasicTester::class,
         ContractTester::class,
         ArbitraryTester::class,
+        ParameterTester::class,
         NestedDepsTester::class,
         MultipleDepsTester::class,
     ];
